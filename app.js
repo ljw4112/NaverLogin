@@ -20,6 +20,13 @@ passport.use(
   )
 );
 
+passport.serializeUser(function (user, done) {
+  done(null, user);
+});
+passport.deserializeUser(function (obj, done) {
+  done(null, obj);
+});
+
 app.use(passport.initialize());
 
 app.get(
